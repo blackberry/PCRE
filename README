@@ -159,7 +159,15 @@ possible to build it as a C++ library, though the provided building apparatus
 does not have any features to support this.
 
 There are some optional features that can be included or omitted from the PCRE
-library. You can read more about them in the pcrebuild man page.
+library. They are also documented in the pcrebuild man page.
+
+. By default, both shared and static libraries are built. You can change this
+  by adding one of these options to the "configure" command:
+
+  --disable-shared
+  --disable-static
+
+  (See also "Shared libraries on Unix-like systems" below.)
 
 . If you want to suppress the building of the C++ wrapper library, you can add
   --disable-cpp to the "configure" command. Otherwise, when "configure" is run,
@@ -279,6 +287,13 @@ library. You can read more about them in the pcrebuild man page.
 
   Of course, the relevant libraries must be installed on your system.
 
+. The default size of internal buffer used by pcregrep can be set by, for
+  example:
+
+  --with-pcregrep-bufsize=50K
+
+  The default value is 20K.
+
 . It is possible to compile pcretest so that it links with the libreadline
   library, by specifying
 
@@ -387,6 +402,16 @@ system. The following are installed (file names are all relative to the
 If you want to remove PCRE from your system, you can run "make uninstall".
 This removes all the files that "make install" installed. However, it does not
 remove any directories, because these are often shared with other programs.
+
+
+Building PCRE for QNX from Windows
+----------------------------------
+- To build for the QNX platform on Windows, run cmd.exe and execute the following commands:
+> cd [bbndk]				where [bbndk] is where the QNX NDK was installed (i.e. C:\bbndk)
+> NativeSDK-env.bat
+> cd [pcre]				    where [pcre] is the directory where PCRE was extracted to
+> make
+Following this, the relevant binaries should reside in the arm/ subdirectory.
 
 
 Retrieving configuration information on Unix-like systems
@@ -796,4 +821,4 @@ The distribution should contain the following files:
 Philip Hazel
 Email local part: ph10
 Email domain: cam.ac.uk
-Last updated: 19 January 2010
+Last updated: 02 August 2011
