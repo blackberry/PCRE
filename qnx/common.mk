@@ -3,13 +3,13 @@ QCONFIG=qconfig.mk
 endif
 include $(QCONFIG)
 
-NAME=PCRE
+NAME=pcre
 
 #===== CCFLAGS - add the flags to the C compiler command line.
 CCFLAGS+=-DHAVE_CONFIG_H
 
 #===== EXTRA_SRCVPATH - a space-separated list of directories to search for source files.
-EXTRA_SRCVPATH+=$(PROJECT_ROOT)/
+EXTRA_SRCVPATH+=$(PRODUCT_ROOT)
 
 include $(MKFILES_ROOT)/qtargets.mk
 
