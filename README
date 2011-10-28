@@ -408,7 +408,7 @@ Building PCRE for QNX from Windows
 ----------------------------------
 - To build for the QNX platform on Windows, run cmd.exe and execute the following commands:
 > cd [bbndk]				where [bbndk] is where the QNX NDK was installed (i.e. C:\bbndk)
-> NativeSDK-env.bat
+> bbndk-env.bat
 > cd [pcre]/qnx			    where [pcre] is the directory where PCRE was extracted to
 > make
 Following this, the relevant binaries should reside in the following subdirectories:
